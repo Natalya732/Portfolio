@@ -148,7 +148,7 @@ export function Projects() {
             Featured Projects
           </h2>
           <p className="text-[#9ea3b0] text-lg max-w-2xl mx-auto">
-            A collection of my recent work showcasing modern mobile development
+            A collection of my recent work showcasing modern web development
             techniques and cross-platform solutions.
           </p>
         </motion.div>
