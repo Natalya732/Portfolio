@@ -92,10 +92,27 @@ export const PROJECTS_DATA = [
     deployedLink: "https://gentle-syrniki-9c8087.netlify.app/",
     image: "/images/services.png",
   },
+  {
+    id: 8,
+    title: "Personal Portfolio Website",
+    description:
+      "Built a personal portfolio using Next.js, TypeScript, TailwindCSS, ShadCN, and Framer Motion. Featured sections for hero, skills, experience, projects, and contact, all designed with modular and maintainable code. Implemented Static Site Generation (SSG) for performance and SEO optimization, ensuring a fast, responsive, and visually engaging experience.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "ShadCN",
+      "Framer Motion",
+    ],
+    date: "2025",
+    githubUrl: "https://github.com/Natalya732/portfolio",
+    deployedLink: "#",
+    image: "/images/portfolio.png",
+  },
 ] as const;
 
 export const PROJECT_CATEGORIES = {
-  featured: ["1", "2", "5", "6"], 
+  featured: ["1", "2", "5", "6"],
   web: ["2", "4", "6", "7"],
   mobile: ["1", "3"],
   games: ["5"],
