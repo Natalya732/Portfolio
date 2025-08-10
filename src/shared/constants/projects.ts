@@ -106,7 +106,8 @@ export const PROJECTS_DATA = [
     ],
     date: "2025",
     githubUrl: "https://github.com/Natalya732/portfolio",
-    deployedLink: "#",
+    deployedLink:
+      "portfolio-5rmx-kuygr0o79-nikkupandey0602-9075s-projects.vercel.app",
     image: "/images/portfolio.png",
   },
 ] as const;
