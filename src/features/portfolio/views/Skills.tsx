@@ -2,21 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { 
-  SiHtml5, 
-  SiCss3, 
-  SiSass, 
-  SiJavascript, 
-  SiTypescript, 
-  SiReact, 
-  SiNextdotjs, 
-  SiFlutter, 
-  SiNestjs, 
-  SiMongodb, 
-  SiGraphql, 
-  SiFirebase, 
-  SiGit 
-} from "react-icons/si";
+
 import { SKILLS_DATA } from "@/shared/constants/skills";
 
 const SkillIcon = ({ 
@@ -71,22 +57,7 @@ const SkillIcon = ({
 };
 
 const SkillsGrid = () => {
-  const skillsWithIcons = [
-    { name: "HTML5", icon: SiHtml5 },
-    { name: "CSS3", icon: SiCss3 },
-    { name: "SASS", icon: SiSass },
-    { name: "JavaScript", icon: SiJavascript },
-    { name: "TypeScript", icon: SiTypescript },
-    { name: "React", icon: SiReact },
-    { name: "Next.js", icon: SiNextdotjs },
-    { name: "Flutter", icon: SiFlutter },
-    { name: "NestJS", icon: SiNestjs },
-    { name: "MongoDB", icon: SiMongodb },
-    { name: "GraphQL", icon: SiGraphql },
-    { name: "Firebase", icon: SiFirebase },
-    { name: "Git", icon: SiGit },
-  ];
-
+ 
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -95,7 +66,7 @@ const SkillsGrid = () => {
       transition={{ duration: 0.8, delay: 0.4 }}
       className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-8 max-w-4xl mx-auto"
     >
-      {skillsWithIcons.map((skill, index) => (
+      {SKILLS_DATA.map((skill, index) => (
         <SkillIcon
           key={skill.name}
           name={skill.name}

@@ -83,24 +83,26 @@ export function About() {
             className="space-y-6"
           >
             <p className="text-[#9ea3b0] text-lg leading-relaxed">
-              I'm a passionate Flutter developer with 4 years of experience
-              building high-performance, cross-platform mobile applications. I
-              specialize in creating smooth, scalable, and user-friendly apps,
-              from concept to deployment. Over the past year, I've also expanded
-              into web development using Next.js, gaining solid experience in
-              building responsive, modern frontend interfaces.
+              I’m a passionate React developer with 4 years of experience
+              building high-performance, scalable web applications. I specialize
+              in creating responsive, user-friendly interfaces using React and
+              Next.js, taking projects from concept to deployment with a strong
+              focus on clean code, performance optimization, and great user
+              experience.
             </p>
             <p className="text-[#9ea3b0] text-lg leading-relaxed">
-              My expertise spans from mobile app development to web applications,
-              with a strong focus on clean code, performance optimization, and
-              user experience. I love working with cutting-edge technologies and
-              staying up-to-date with the latest industry trends.
+              I’m a passionate React developer with 4 years of experience
+              building high-performance, scalable web applications. I specialize
+              in creating responsive, user-friendly interfaces using React and
+              Next.js, taking projects from concept to deployment with a strong
+              focus on clean code, performance optimization, and great user
+              experience.
             </p>
             <p className="text-[#9ea3b0] text-lg leading-relaxed">
-              When I'm not coding, you can find me exploring new technologies,
-              contributing to open-source projects, or sharing knowledge with the
-              developer community. I believe in continuous learning and pushing
-              the boundaries of what's possible in software development.
+              Beyond coding, I love exploring new technologies, contributing to
+              open-source projects, and sharing knowledge with the developer
+              community. I believe in continuous learning and pushing the
+              boundaries of what’s possible in web development.
             </p>
           </motion.div>
         </motion.div>
