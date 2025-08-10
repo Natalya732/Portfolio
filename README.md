@@ -13,61 +13,23 @@ A modern portfolio website built with Next.js, TypeScript, Tailwind CSS, and sha
 ## Project Structure
 
 ```
-src/
-├── app/                    # Next.js App Router pages
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Home page
-├── features/              # Feature-based modules
-│   └── portfolio/         # Portfolio feature
-│       ├── components/    # Feature-specific components
-│       │   └── project-card.tsx
-│       ├── context/       # Feature-specific context
-│       │   └── portfolio-context.tsx
-│       ├── services/      # Feature-specific services
-│       │   └── portfolio-service.ts
-│       ├── types/         # Feature-specific types
-│       │   └── index.ts
-│       └── index.ts       # Feature exports
-├── shared/                # Shared resources
-│   ├── components/        # Shared UI components
-│   │   ├── ui/           # shadcn/ui components
-│   │   │   ├── accordion.tsx
-│   │   │   ├── alert.tsx
-│   │   │   ├── alert-dialog.tsx
-│   │   │   ├── avatar.tsx
-│   │   │   ├── badge.tsx
-│   │   │   ├── breadcrumb.tsx
-│   │   │   ├── button.tsx
-│   │   │   ├── card.tsx
-│   │   │   ├── checkbox.tsx
-│   │   │   ├── collapsible.tsx
-│   │   │   ├── dialog.tsx
-│   │   │   ├── dropdown-menu.tsx
-│   │   │   ├── input.tsx
-│   │   │   ├── label.tsx
-│   │   │   ├── navigation-menu.tsx
-│   │   │   ├── pagination.tsx
-│   │   │   ├── popover.tsx
-│   │   │   ├── progress.tsx
-│   │   │   ├── radio-group.tsx
-│   │   │   ├── select.tsx
-│   │   │   ├── separator.tsx
-│   │   │   ├── sheet.tsx
-│   │   │   ├── skeleton.tsx
-│   │   │   ├── slider.tsx
-│   │   │   ├── switch.tsx
-│   │   │   ├── table.tsx
-│   │   │   ├── tabs.tsx
-│   │   │   ├── textarea.tsx
-│   │   │   └── tooltip.tsx
-│   │   └── index.ts      # Component exports
-│   ├── constants/        # App-wide constants
-│   │   └── index.ts
-│   └── context/          # Shared context
-│       └── theme-context.tsx
-└── lib/                  # Utility functions
-    └── utils.ts          # shadcn/ui utilities
+frontend/
+├── src/
+│   ├── features/
+│   │   └── notebook/
+│   │       ├── components/
+│   │       │   ├── chat/
+│   │       │   ├── entry/
+│   │       │   └── pdf-viewer/
+│   │       ├── services/
+│   │       ├── context/
+│   │       └── types/
+│   ├── shared/
+│   │   ├── components/
+│   │   ├── constants/
+│   │   └── context/
+│   └── App.tsx
+
 ```
 
 ## Getting Started
