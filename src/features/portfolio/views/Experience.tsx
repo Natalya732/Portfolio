@@ -1,21 +1,15 @@
 "use client";
 
+import { EXPERIENCE_DATA } from "@/shared/constants";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-
-interface ExperienceItem {
-  company: string;
-  title: string;
-  period: string;
-  location: string;
-  achievements: string[];
-}
+import { ExperienceItem as EXPERIENCE_ITEM_TYPE } from "@/features/portfolio/types";
 
 const ExperienceItem = ({
   experience,
   index,
 }: {
-  experience: ExperienceItem;
+  experience: EXPERIENCE_ITEM_TYPE;
   index: number;
 }) => {
   return (
@@ -101,45 +95,6 @@ export function Experience() {
 
   const gradientProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
-  const experiences: ExperienceItem[] = [
-    {
-      company: "Lassod Consulting Limited",
-      title: "Mobile Engineer (Remote)",
-      period: "Mar 2022 - Present",
-      location: "UK",
-      achievements: [
-        "As a Flutter Engineer, I played a pivotal role in the development of the Oyoyo Events Application, a platform connecting vendors and clients in the event planning industry.",
-        "Successfully integrated Google Maps into the Oyoyo Events Application. This enhancement enables users to seamlessly discover events near their location or any specified search area",
-        "Established robust CI/CD pipelines using Codemagic, streamlining the testing and production release processes for the mobile projects. This implementation resulted in increased efficiency, ensuring a smooth and automated workflow for testing and deploying updates, ultimately contributing to the projects' overall success.",
-        "Took pride in crafting pixel-perfect UI designs for various projects. Ensured an aesthetically pleasing and seamless user interface, contributing to an enhanced overall user experience.",
-      ],
-    },
-    {
-      company: "Freelance Developer",
-      title: "Full Stack Developer",
-      period: "Jan 2021 - Feb 2022",
-      location: "Remote",
-      achievements: [
-        "Developed and maintained multiple client websites using modern web technologies including React, Next.js, and Node.js.",
-        "Implemented responsive design principles ensuring optimal user experience across all devices and screen sizes.",
-        "Collaborated with clients to understand requirements and deliver custom solutions that meet their business needs.",
-        "Optimized website performance and SEO, resulting in improved search engine rankings and faster loading times.",
-      ],
-    },
-    {
-      company: "Tech Startup",
-      title: "Junior Developer",
-      period: "Jun 2020 - Dec 2020",
-      location: "Local",
-      achievements: [
-        "Assisted in the development of mobile applications using Flutter and Dart programming language.",
-        "Participated in code reviews and contributed to improving code quality and best practices.",
-        "Worked closely with senior developers to learn advanced programming concepts and methodologies.",
-        "Helped maintain and debug existing applications, ensuring smooth operation and user satisfaction.",
-      ],
-    },
-  ];
-
   return (
     <section id="experience" className="py-20 px-4 relative overflow-hidden">
       {/* Background gradient */}
@@ -182,7 +137,7 @@ export function Experience() {
 
           {/* Experience items */}
           <div className="space-y-0 ml-10">
-            {experiences.map((experience, index) => (
+            {EXPERIENCE_DATA.map((experience, index) => (
               <ExperienceItem
                 key={experience.company}
                 experience={experience}

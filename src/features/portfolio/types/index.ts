@@ -32,3 +32,11 @@ export interface ContactForm {
   email: string;
   message: string;
 }
+
+export interface ExperienceItem {
+  company: string;
+  title: string;
+  period: string;
+  location: string;
+  achievements: string[];
+}

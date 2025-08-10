@@ -16,6 +16,8 @@ const SocialIcon = ({
 }) => (
   <motion.a
     href={href}
+    target="_blank"
+    rel="noopener noreferrer"
     initial={{ opacity: 0, scale: 0.8 }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{ duration: 0.5, delay }}
@@ -74,7 +76,7 @@ const RoleBadge = () => (
     className="mb-6"
   >
     <div className="inline-block bg-[#1e4eae] text-white text-xl font-bold px-8 py-3 rounded-lg border border-[#546a7b] shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 hover:scale-105">
-    Web Developer
+      Web Developer
     </div>
   </motion.div>
 );
@@ -93,9 +95,13 @@ const Description = () => (
 
 const SocialLinks = () => {
   const socialLinks = [
-    { icon: Github, href: "#", delay: 1.4 },
-    { icon: MailIcon, href: "#", delay: 1.5 },
-    { icon: Linkedin, href: "#", delay: 1.6 },
+    { icon: Github, href: "https://github.com/Natalya732", delay: 1.4 },
+    { icon: MailIcon, href: "mailto:nikkupandey0602@gmail.com", delay: 1.5 },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/nk-pandey/",
+      delay: 1.6,
+    },
   ];
 
   return (
@@ -119,22 +125,31 @@ const SocialLinks = () => {
 
 const CallToActionButtons = () => (
   <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.8 }}
-   className="flex gap-4 justify-center mb-8"
->
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.8 }}
+    className="flex gap-4 justify-center mb-8"
+  >
     <Button
       variant="outline"
-      size="lg"
       className="border border-white text-white hover:bg-white hover:text-black transition-all duration-300 font-semibold text-base cursor-pointer rounded-lg hover:scale-105 shadow-lg hover:shadow-xl"
+      onClick={() => {
+        window.open("mailto:nikkupandey0602@gmail.com", "_blank");
+      }}
     >
       <Mail className="w-4 h-4 mr-2" />
       Contact Me
     </Button>
+
     <Button
-      size="lg"
+      variant="outline"
       className="bg-white text-black cursor-pointer hover:bg-gray-100 transition-all duration-300 font-semibold text-base rounded-lg hover:scale-105 shadow-lg hover:shadow-xl"
+      onClick={() => {
+        window.open(
+          "https://drive.google.com/file/d/1jDcRM2I9wDt8kQl_zukj5AQvIinz3mUc/view?usp=sharing",
+          "_blank"
+        );
+      }}
     >
       <Download className="w-4 h-4 mr-2" />
       Resume
@@ -160,10 +175,7 @@ export function Hero() {
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0f295c] to-black opacity-50" />
 
-
-      <div
-        className="text-center max-w-4xl mx-auto relative z-10"
-      >
+      <div className="text-center max-w-4xl mx-auto relative z-10">
         <ProfilePicture />
         <Greeting />
         <RoleBadge />

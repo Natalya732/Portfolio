@@ -83,7 +83,7 @@ export function About() {
             className="space-y-6"
           >
             <p className="text-[#9ea3b0] text-lg leading-relaxed">
-              I’m a passionate React developer with 4 years of experience
+              I’m a passionate React developer with 3.5 years of experience
               building high-performance, scalable web applications. I specialize
               in creating responsive, user-friendly interfaces using React and
               Next.js, taking projects from concept to deployment with a strong
@@ -91,12 +91,11 @@ export function About() {
               experience.
             </p>
             <p className="text-[#9ea3b0] text-lg leading-relaxed">
-              I’m a passionate React developer with 4 years of experience
-              building high-performance, scalable web applications. I specialize
-              in creating responsive, user-friendly interfaces using React and
-              Next.js, taking projects from concept to deployment with a strong
-              focus on clean code, performance optimization, and great user
-              experience.
+              Alongside React and Next.js, I work with modern
+              backend-as-a-service platforms like Firebase and Supabase to
+              deliver robust, real-time, and secure applications. My expertise
+              spans across frontend development and full-stack integration,
+              enabling me to bring complete solutions to life.
             </p>
             <p className="text-[#9ea3b0] text-lg leading-relaxed">
               Beyond coding, I love exploring new technologies, contributing to

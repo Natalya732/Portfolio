@@ -7,15 +7,26 @@ import Image from "next/image";
 import { NAVIGATION_ITEMS } from "@/shared/constants/navigation";
 
 const Logo = () => (
-  <motion.div
-    whileHover={{ scale: 1.05 }}
-    className="flex items-center"
-  >
-    <Image src={"/images/user.jpg"} alt="Erick" width={40} height={40} className="rounded-full" />
+  <motion.div whileHover={{ scale: 1.05 }} className="flex items-center">
+    <Image
+      src={"/images/user.jpg"}
+      alt="Erick"
+      width={40}
+      height={40}
+      className="rounded-full"
+    />
   </motion.div>
 );
 
-const NavItem = ({ name, href, index }: { name: string; href: string; index: number }) => (
+const NavItem = ({
+  name,
+  href,
+  index,
+}: {
+  name: string;
+  href: string;
+  index: number;
+}) => (
   <motion.a
     href={href}
     key={index}
@@ -46,9 +57,15 @@ const ResumeButton = () => (
     animate={{ opacity: 1, scale: 1 }}
     transition={{ duration: 0.5, delay: 0.4 }}
   >
-    <Button 
+    <Button
       size="sm"
       className="bg-white text-black hover:bg-gray-100 font-medium text-sm px-4 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+      onClick={() => {
+        window.open(
+          "https://drive.google.com/file/d/1jDcRM2I9wDt8kQl_zukj5AQvIinz3mUc/view?usp=sharing",
+          "_blank"
+        );
+      }}
     >
       <Download className="w-4 h-4 mr-2" />
       Resume
