@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { SECTION_TITLES } from "@/shared/constants/content";
 
 export function About() {
   return (
@@ -18,18 +19,10 @@ export function About() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          // transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center mb-16"
         >
-          <h3
-            className="text-[#9ea3b0] text-lg font-medium mb-2"
-            // whileHover={{
-            //   rotate: 2,
-            //   scale: 1.05,
-            //   transition: { duration: 0.3 }
-            // }}
-          >
-            Introduction
+          <h3 className="text-[#9ea3b0] text-lg font-medium mb-2">
+            {SECTION_TITLES.about.subtitle}
           </h3>
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-white font-montserrat"
@@ -39,7 +32,7 @@ export function About() {
               transition: { duration: 0.3 },
             }}
           >
-            About me
+            {SECTION_TITLES.about.title}
           </motion.h2>
         </motion.div>
 
@@ -98,12 +91,16 @@ export function About() {
               building responsive, modern frontend interfaces.
             </p>
             <p className="text-[#9ea3b0] text-lg leading-relaxed">
-              I thrive in fast-paced environments, whether working solo or
-              collaborating with teams, and I'm driven by clean code, great UX,
-              and continuous learning. Whether it's launching a new product,
-              optimizing existing codebases, or integrating with complex APIs, I
-              bring a detail-oriented mindset and a problem-solving attitude to
-              every project.
+              My expertise spans from mobile app development to web applications,
+              with a strong focus on clean code, performance optimization, and
+              user experience. I love working with cutting-edge technologies and
+              staying up-to-date with the latest industry trends.
+            </p>
+            <p className="text-[#9ea3b0] text-lg leading-relaxed">
+              When I'm not coding, you can find me exploring new technologies,
+              contributing to open-source projects, or sharing knowledge with the
+              developer community. I believe in continuous learning and pushing
+              the boundaries of what's possible in software development.
             </p>
           </motion.div>
         </motion.div>

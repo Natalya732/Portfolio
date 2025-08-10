@@ -5,16 +5,8 @@ export const APP_CONFIG = {
   version: "1.0.0",
 } as const;
 
-// Navigation constants
-export const NAVIGATION = {
-  home: "/",
-  about: "/about",
-  projects: "/projects",
-  contact: "/contact",
-} as const;
-
-export const SOCIAL_LINKS = {
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
-  twitter: "https://twitter.com",
-} as const;
+// Re-export all constants
+export * from './navigation';
+export * from './skills';
+export * from './contact';
+export * from './content';

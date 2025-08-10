@@ -2,14 +2,30 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { 
+  SiHtml5, 
+  SiCss3, 
+  SiSass, 
+  SiJavascript, 
+  SiTypescript, 
+  SiReact, 
+  SiNextdotjs, 
+  SiFlutter, 
+  SiNestjs, 
+  SiMongodb, 
+  SiGraphql, 
+  SiFirebase, 
+  SiGit 
+} from "react-icons/si";
+import { SKILLS_DATA } from "@/shared/constants/skills";
 
 const SkillIcon = ({ 
   name, 
-  icon, 
+  icon: IconComponent, 
   index 
 }: { 
   name: string; 
-  icon: string; 
+  icon: React.ComponentType<{ className?: string }>; 
   index: number; 
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -32,7 +48,7 @@ const SkillIcon = ({
     >
       {/* Skill Icon */}
       <div className="w-16 h-16 rounded-full border border-white flex items-center justify-center bg-transparent hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer">
-        <span className="text-white text-lg font-medium">{icon}</span>
+        <IconComponent className="text-white text-2xl" />
       </div>
       
       {/* Tooltip - Positioned above the icon */}
@@ -55,20 +71,20 @@ const SkillIcon = ({
 };
 
 const SkillsGrid = () => {
-  const skills = [
-    { name: "HTML5", icon: "5" },
-    { name: "CSS3", icon: "3" },
-    { name: "SASS", icon: "~" },
-    { name: "JavaScript", icon: "JS" },
-    { name: "TypeScript", icon: "TS" },
-    { name: "React", icon: "⚛" },
-    { name: "Next.js", icon: "N" },
-    { name: "Flutter", icon: "F" },
-    { name: "NestJS", icon: "⬡" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "GraphQL", icon: "◆" },
-    { name: "Firebase", icon: "●" },
-    { name: "Git", icon: "📚" },
+  const skillsWithIcons = [
+    { name: "HTML5", icon: SiHtml5 },
+    { name: "CSS3", icon: SiCss3 },
+    { name: "SASS", icon: SiSass },
+    { name: "JavaScript", icon: SiJavascript },
+    { name: "TypeScript", icon: SiTypescript },
+    { name: "React", icon: SiReact },
+    { name: "Next.js", icon: SiNextdotjs },
+    { name: "Flutter", icon: SiFlutter },
+    { name: "NestJS", icon: SiNestjs },
+    { name: "MongoDB", icon: SiMongodb },
+    { name: "GraphQL", icon: SiGraphql },
+    { name: "Firebase", icon: SiFirebase },
+    { name: "Git", icon: SiGit },
   ];
 
   return (
@@ -79,7 +95,7 @@ const SkillsGrid = () => {
       transition={{ duration: 0.8, delay: 0.4 }}
       className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-8 max-w-4xl mx-auto"
     >
-      {skills.map((skill, index) => (
+      {skillsWithIcons.map((skill, index) => (
         <SkillIcon
           key={skill.name}
           name={skill.name}

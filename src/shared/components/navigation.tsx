@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/shared/components/ui/button";
 import { Sun, Download } from "lucide-react";
 import Image from "next/image";
+import { NAVIGATION_ITEMS } from "@/shared/constants/navigation";
 
 const Logo = () => (
   <motion.div
@@ -56,15 +57,6 @@ const ResumeButton = () => (
 );
 
 export function Navigation() {
-  const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-  ];
-
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
@@ -79,7 +71,7 @@ export function Navigation() {
 
           {/* Navigation items in center */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
+            {NAVIGATION_ITEMS.map((item, index) => (
               <NavItem
                 key={item.name}
                 name={item.name}
