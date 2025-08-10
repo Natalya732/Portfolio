@@ -1,28 +1,7 @@
 import { Project, Skill, Experience } from "../types";
+import { PROJECTS_DATA } from "@/shared/constants/projects";
 
 // Mock data - in a real app, this would come from an API
-export const mockProjects: Project[] = [
-  {
-    id: "1",
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce platform built with Next.js and Stripe",
-    image: "/projects/ecommerce.jpg",
-    technologies: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
-    githubUrl: "https://github.com/example/ecommerce",
-    liveUrl: "https://ecommerce.example.com",
-    featured: true,
-  },
-  {
-    id: "2",
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates",
-    image: "/projects/task-app.jpg",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-    githubUrl: "https://github.com/example/task-app",
-    featured: true,
-  },
-];
-
 export const mockSkills: Skill[] = [
   {
     id: "1",
@@ -58,9 +37,9 @@ export const mockExperience: Experience[] = [
 
 export class PortfolioService {
   static async getProjects(): Promise<Project[]> {
-    // Simulate API call
+    // Use the constants data instead of mock data
     return new Promise((resolve) => {
-      setTimeout(() => resolve(mockProjects), 500);
+      setTimeout(() => resolve(PROJECTS_DATA as Project[]), 500);
     });
   }
 

@@ -11,4 +11,5 @@ export * from "./navigation";
 export * from "./skills";
 export * from "./contact";
 export * from "./content";
+export * from './projects';
 export * from "./experience";

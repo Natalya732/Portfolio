@@ -4,9 +4,10 @@ export interface Project {
   description: string;
   image: string;
   technologies: string[];
-  githubUrl?: string;
-  liveUrl?: string;
-  featured: boolean;
+  githubUrl?: string | null;
+  deployedLink: string;
+  date: string;
+  featured?: boolean;
 }
 
 export interface Skill {

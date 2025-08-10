@@ -1,11 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ProjectCard } from "../components/project-card";
-import { usePortfolio } from "../context/portfolio-context";
 import { useState } from "react";
+import Image from "next/image";
+import { ExternalLink, Github, Eye } from "lucide-react";
+import { PROJECTS_DATA } from "@/shared/constants/projects";
 
-const ProjectCardEnhanced = ({ project, index }: { project: any; index: number }) => {
+const ProjectCardEnhanced = ({
+  project,
+  index,
+}: {
+  project: any;
+  index: number;
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -13,22 +20,25 @@ const ProjectCardEnhanced = ({ project, index }: { project: any; index: number }
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, delay: index * 0.2 }}
-      whileHover={{ 
-        y: -15,
+      whileHover={{
+        y: -5,
         scale: 1.02,
-        transition: { duration: 0.3 }
+        transition: { duration: 0.3 },
       }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       className="group relative"
     >
-      <div className="relative overflow-hidden rounded-xl bg-[#1e4eae]/10 border border-[#546a7b]/30 backdrop-blur-sm">
+      <div className="relative h-full overflow-hidden rounded-xl bg-[#1e4eae]/10 border border-[#546a7b]/30 backdrop-blur-sm">
         {/* Project Image */}
         <div className="relative h-48 overflow-hidden">
-          <div className="w-full h-full bg-[#0f295c]/30 flex items-center justify-center">
-            <span className="text-4xl">📱</span>
-          </div>
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-110"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
           {/* Overlay on hover */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -40,32 +50,44 @@ const ProjectCardEnhanced = ({ project, index }: { project: any; index: number }
               animate={{ scale: isHovered ? 1 : 0 }}
               className="flex gap-4"
             >
-              <button className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
-                👁️
+              <button
+                className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                onClick={() => {
+                  window.open(project.deployedLink, "_blank");
+                }}
+              >
+                <Eye className="w-5 h-5" />
               </button>
-              <button className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
-                🔗
-              </button>
+              {project.githubUrl && (
+                <button
+                  className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                  onClick={() => {
+                    window.open(project.githubUrl, "_blank");
+                  }}
+                >
+                  <Github className="w-5 h-5" />
+                </button>
+              )}
             </motion.div>
           </motion.div>
         </div>
 
         {/* Project Content */}
         <div className="p-6">
-          <motion.h3 
+          <motion.h3
             className="text-xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors"
             whileHover={{ x: 5 }}
           >
-            {project.title || "Project Title"}
+            {project.title}
           </motion.h3>
-          
+
           <p className="text-[#9ea3b0] text-sm mb-4 leading-relaxed">
-            {project.description || "A comprehensive mobile application built with modern technologies and best practices."}
+            {project.description}
           </p>
 
           {/* Technologies */}
           <div className="flex flex-wrap gap-2 mb-4">
-            {['Flutter', 'Dart', 'Firebase'].map((tech, techIndex) => (
+            {project.technologies.map((tech: string, techIndex: number) => (
               <motion.span
                 key={tech}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -80,7 +102,7 @@ const ProjectCardEnhanced = ({ project, index }: { project: any; index: number }
 
           {/* Project Date */}
           <div className="text-xs text-[#9ea3b0]">
-            <span> {project.date || "2024"}</span>
+            <span>{project.date}</span>
           </div>
         </div>
 
@@ -97,67 +119,15 @@ const ProjectCardEnhanced = ({ project, index }: { project: any; index: number }
 };
 
 export function Projects() {
-  const { projects, loading, error } = usePortfolio();
+  const [viewAll, setViewAll] = useState(false);
 
-  // Sample projects if none loaded
-  const sampleProjects = [
-    {
-      id: 1,
-      title: "Oyoyo Events App",
-      description: "A comprehensive event planning platform connecting vendors and clients with real-time location services and seamless booking experiences.",
-      technologies: ["Flutter", "Dart", "Firebase", "Google Maps"],
-      date: "2024"
-    },
-    {
-      id: 2,
-      title: "E-Commerce Mobile App",
-      description: "Modern e-commerce solution with advanced features including payment integration, inventory management, and analytics dashboard.",
-      technologies: ["Flutter", "Node.js", "MongoDB", "Stripe"],
-      date: "2023"
-    },
-    {
-      id: 3,
-      title: "Fitness Tracker",
-      description: "Personal fitness companion app with workout tracking, nutrition monitoring, and social features for community engagement.",
-      technologies: ["Flutter", "Firebase", "HealthKit", "Google Fit"],
-      date: "2023"
-    }
-  ];
-
-  const displayProjects = projects.length > 0 ? projects : sampleProjects;
-
-  if (loading) {
-    return (
-      <section id="projects" className="py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0f295c]/20 to-black" />
-        <div className="max-w-6xl mx-auto text-center relative z-10">
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            className="w-12 h-12 border-2 border-orange-400 border-t-transparent rounded-full mx-auto mb-4"
-          />
-          <div className="text-xl font-bold text-white">Loading projects...</div>
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section id="projects" className="py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0f295c]/20 to-black" />
-        <div className="max-w-6xl mx-auto text-center relative z-10">
-          <div className="text-red-400 text-lg">Error: {error}</div>
-        </div>
-      </section>
-    );
-  }
+  const displayProjects = viewAll ? PROJECTS_DATA : PROJECTS_DATA.slice(0, 3);
 
   return (
     <section id="projects" className="py-20 px-4 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0f295c]/20 to-black" />
-      
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -178,7 +148,8 @@ export function Projects() {
             Featured Projects
           </h2>
           <p className="text-[#9ea3b0] text-lg max-w-2xl mx-auto">
-            A collection of my recent work showcasing modern mobile development techniques and cross-platform solutions.
+            A collection of my recent work showcasing modern mobile development
+            techniques and cross-platform solutions.
           </p>
         </motion.div>
 
@@ -201,8 +172,13 @@ export function Projects() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center mt-12"
         >
-          <button className="px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-            View All Projects
+          <button
+            className="px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            onClick={() => {
+              setViewAll((prev) => !prev);
+            }}
+          >
+            {viewAll ? "Show Less" : "View All Projects"}
           </button>
         </motion.div>
       </motion.div>

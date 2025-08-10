@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/shared/context/theme-context";
-import { APP_CONFIG } from "@/shared/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,23 +14,23 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Nikita - Flutter Developer Portfolio",
+    default: "Nikita - Web Developer Portfolio",
     template: "%s | Nikita Portfolio",
   },
-  description: "A passionate Flutter developer with 4 years of experience building high-performance, cross-platform mobile applications.",
-  keywords: ["Flutter", "Mobile Development", "React", "Next.js", "TypeScript", "Portfolio"],
+  description: "A passionate Web developer with 3.5 years of experience building high-performance, cross-platform web applications.",
+  keywords: ["Web", "React", "Next.js", "TypeScript", "Portfolio"],
   authors: [{ name: "Nikita" }],
   creator: "Nikita",
   openGraph: {
-    title: "Nikita - Flutter Developer Portfolio",
-    description: "A passionate Flutter developer with 4 years of experience building high-performance, cross-platform mobile applications.",
+    title: "Nikita - Web Developer Portfolio",
+    description: "A passionate Web developer with 3.5 years of experience building high-performance, cross-platform web applications.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nikita - Flutter Developer Portfolio",
-    description: "A passionate Flutter developer with 4 years of experience building high-performance, cross-platform mobile applications.",
+    title: "Nikita - Web Developer Portfolio",
+    description: "A passionate Web developer with 3.5 years of experience building high-performance, cross-platform web applications.",
   },
   robots: {
     index: true,
