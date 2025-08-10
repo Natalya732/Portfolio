@@ -36,27 +36,27 @@ const ContactForm = () => {
           className="space-y-2"
           whileHover={{ x: 5 }}
         >
-          <Label htmlFor="name" className="text-white font-medium">Name</Label>
+          <Label htmlFor="name" className="text-gray-900 dark:text-white font-medium">Name</Label>
           <Input 
             id="name" 
             placeholder="Your name"
             value={formData.name}
             onChange={(e) => setFormData({...formData, name: e.target.value})}
-            className="bg-[#1e4eae]/20 border-[#546a7b] text-white placeholder:text-[#9ea3b0] focus:border-orange-400 focus:ring-orange-400/20 transition-all duration-300"
+            className="bg-gray-100 dark:bg-[#1e4eae]/20 border-gray-300 dark:border-[#546a7b] text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-[#9ea3b0] focus:border-orange-400 focus:ring-orange-400/20 transition-all duration-300"
           />
         </motion.div>
         <motion.div 
           className="space-y-2"
           whileHover={{ x: -5 }}
         >
-          <Label htmlFor="email" className="text-white font-medium">Email</Label>
+          <Label htmlFor="email" className="text-gray-900 dark:text-white font-medium">Email</Label>
           <Input 
             id="email" 
             type="email" 
             placeholder="your.email@example.com"
             value={formData.email}
             onChange={(e) => setFormData({...formData, email: e.target.value})}
-            className="bg-[#1e4eae]/20 border-[#546a7b] text-white placeholder:text-[#9ea3b0] focus:border-orange-400 focus:ring-orange-400/20 transition-all duration-300"
+            className="bg-gray-100 dark:bg-[#1e4eae]/20 border-gray-300 dark:border-[#546a7b] text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-[#9ea3b0] focus:border-orange-400 focus:ring-orange-400/20 transition-all duration-300"
           />
         </motion.div>
       </div>
@@ -65,13 +65,13 @@ const ContactForm = () => {
         className="space-y-2"
         whileHover={{ x: 5 }}
       >
-        <Label htmlFor="subject" className="text-white font-medium">Subject</Label>
+        <Label htmlFor="subject" className="text-gray-900 dark:text-white font-medium">Subject</Label>
         <Input 
           id="subject" 
           placeholder="What's this about?"
           value={formData.subject}
           onChange={(e) => setFormData({...formData, subject: e.target.value})}
-          className="bg-[#1e4eae]/20 border-[#546a7b] text-white placeholder:text-[#9ea3b0] focus:border-orange-400 focus:ring-orange-400/20 transition-all duration-300"
+          className="bg-gray-100 dark:bg-[#1e4eae]/20 border-gray-300 dark:border-[#546a7b] text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-[#9ea3b0] focus:border-orange-400 focus:ring-orange-400/20 transition-all duration-300"
         />
       </motion.div>
       
@@ -79,14 +79,14 @@ const ContactForm = () => {
         className="space-y-2"
         whileHover={{ x: -5 }}
       >
-        <Label htmlFor="message" className="text-white font-medium">Message</Label>
+        <Label htmlFor="message" className="text-gray-900 dark:text-white font-medium">Message</Label>
         <textarea 
           id="message" 
           placeholder="Tell me about your project..."
           rows={6}
           value={formData.message}
           onChange={(e) => setFormData({...formData, message: e.target.value})}
-          className="w-full bg-[#1e4eae]/20 border border-[#546a7b] text-white placeholder:text-[#9ea3b0] focus:border-orange-400 focus:ring-orange-400/20 rounded-md px-3 py-2 resize-none transition-all duration-300"
+          className="w-full bg-gray-100 dark:bg-[#1e4eae]/20 border border-gray-300 dark:border-[#546a7b] text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-[#9ea3b0] focus:border-orange-400 focus:ring-orange-400/20 rounded-md px-3 py-2 resize-none transition-all duration-300"
         />
       </motion.div>
       
@@ -141,8 +141,8 @@ const ContactInfo = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-orange-600 group-hover:to-orange-700 transition-all duration-300 transform group-hover:rotate-12">
                 <IconComponent className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-white font-semibold mb-2 group-hover:text-orange-400 transition-colors">{item.title}</h3>
-              <p className="text-[#9ea3b0] group-hover:text-white transition-colors">{item.value}</p>
+              <h3 className="text-gray-900 dark:text-white font-semibold mb-2 group-hover:text-orange-400 transition-colors">{item.title}</h3>
+              <p className="text-gray-600 dark:text-[#9ea3b0] group-hover:text-gray-800 dark:group-hover:text-white transition-colors">{item.value}</p>
             </motion.a>
           );
         })}
@@ -166,7 +166,7 @@ const SocialLinks = () => {
       transition={{ duration: 0.8, delay: 1.0 }}
       className="mt-12 text-center"
     >
-      <h3 className="text-white font-semibold mb-6">Connect with me</h3>
+      <h3 className="text-gray-900 dark:text-white font-semibold mb-6">Connect with me</h3>
       <div className="flex justify-center gap-6">
         {SOCIAL_ITEMS.map((item, index) => {
           const IconComponent = iconMap[item.icon as keyof typeof iconMap];
@@ -178,7 +178,7 @@ const SocialLinks = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5, scale: 1.1, rotate: 5 }}
-              className="w-12 h-12 bg-[#1e4eae]/20 border border-[#546a7b] rounded-full flex items-center justify-center text-white hover:bg-orange-500 hover:border-orange-500 transition-all duration-300"
+              className="w-12 h-12 bg-gray-100 dark:bg-[#1e4eae]/20 border border-gray-300 dark:border-[#546a7b] rounded-full flex items-center justify-center text-gray-700 dark:text-white hover:bg-orange-500 hover:border-orange-500 transition-all duration-300"
             >
               <IconComponent className="w-5 h-5" />
             </motion.a>
@@ -193,7 +193,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 px-4 relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0f295c]/20 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50/20 to-gray-50 dark:from-black dark:via-[#0f295c]/20 dark:to-black" />
       
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -209,13 +209,13 @@ export function Contact() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center mb-16"
         >
-          <h3 className="text-[#9ea3b0] text-lg font-medium mb-2">
+          <h3 className="text-gray-600 dark:text-[#9ea3b0] text-lg font-medium mb-2">
             {SECTION_TITLES.contact.subtitle}
           </h3>
-          <h2 className="text-4xl md:text-5xl font-bold text-white font-montserrat mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white font-montserrat mb-4">
             {SECTION_TITLES.contact.title}
           </h2>
-          <p className="text-[#9ea3b0] text-lg">
+          <p className="text-gray-600 dark:text-[#9ea3b0] text-lg">
             {SECTION_TITLES.contact.description}
           </p>
         </motion.div>

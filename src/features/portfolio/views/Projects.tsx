@@ -29,7 +29,7 @@ const ProjectCardEnhanced = ({
       onHoverEnd={() => setIsHovered(false)}
       className="group relative"
     >
-      <div className="relative h-full overflow-hidden rounded-xl bg-[#1e4eae]/10 border border-[#546a7b]/30 backdrop-blur-sm">
+      <div className="relative h-full overflow-hidden rounded-xl bg-gray-100/50 dark:bg-[#1e4eae]/10 border border-gray-200 dark:border-[#546a7b]/30 backdrop-blur-sm">
         {/* Project Image */}
         <div className="relative h-48 overflow-hidden">
           <Image
@@ -75,13 +75,13 @@ const ProjectCardEnhanced = ({
         {/* Project Content */}
         <div className="p-6">
           <motion.h3
-            className="text-xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors"
+            className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-orange-400 transition-colors"
             whileHover={{ x: 5 }}
           >
             {project.title}
           </motion.h3>
 
-          <p className="text-[#9ea3b0] text-sm mb-4 leading-relaxed">
+          <p className="text-gray-600 dark:text-[#9ea3b0] text-sm mb-4 leading-relaxed">
             {project.description}
           </p>
 
@@ -93,7 +93,7 @@ const ProjectCardEnhanced = ({
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.2 + techIndex * 0.1 }}
-                className="px-3 py-1 bg-[#546a7b]/30 text-white text-xs rounded-full border border-[#546a7b]/50"
+                className="px-3 py-1 bg-gray-200 dark:bg-[#546a7b]/30 text-gray-700 dark:text-white text-xs rounded-full border border-gray-300 dark:border-[#546a7b]/50"
               >
                 {tech}
               </motion.span>
@@ -101,7 +101,7 @@ const ProjectCardEnhanced = ({
           </div>
 
           {/* Project Date */}
-          <div className="text-xs text-[#9ea3b0]">
+          <div className="text-xs text-gray-500 dark:text-[#9ea3b0]">
             <span>{project.date}</span>
           </div>
         </div>
@@ -126,7 +126,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-20 px-4 relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0f295c]/20 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50/20 to-gray-50 dark:from-black dark:via-[#0f295c]/20 dark:to-black" />
 
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -143,11 +143,11 @@ export function Projects() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center mb-16"
         >
-          <h3 className="text-[#9ea3b0] text-lg font-medium mb-2">Portfolio</h3>
-          <h2 className="text-4xl md:text-5xl font-bold text-white font-montserrat mb-4">
+          <h3 className="text-gray-600 dark:text-[#9ea3b0] text-lg font-medium mb-2">Portfolio</h3>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white font-montserrat mb-4">
             Featured Projects
           </h2>
-          <p className="text-[#9ea3b0] text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-[#9ea3b0] text-lg max-w-2xl mx-auto">
             A collection of my recent work showcasing modern web development
             techniques and cross-platform solutions.
           </p>
@@ -173,7 +173,7 @@ export function Projects() {
           className="text-center mt-12"
         >
           <button
-            className="px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="px-8 py-3 bg-white dark:bg-white text-black dark:text-black font-semibold rounded-lg hover:bg-gray-100 dark:hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             onClick={() => {
               setViewAll((prev) => !prev);
             }}

@@ -9,7 +9,7 @@ import { Contact } from "@/features/portfolio/views/Contact";
 // Remove "use client" to enable static generation
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
       <Navigation />
       <Hero />
       <About />
@@ -23,16 +23,16 @@ export default function Home() {
 
 // Add metadata for SEO
 export const metadata = {
-  title: "Nikita - Flutter Developer Portfolio",
+  title: "Nikita - Web Developer Portfolio",
   description:
-    "A passionate Flutter developer with 4 years of experience building high-performance, cross-platform mobile applications.",
-  keywords: ["Flutter", "Mobile Development", "React", "Next.js", "TypeScript"],
+    "A passionate Web developer with 4 years of experience building high-performance, cross-platform mobile applications.",
+  keywords: ["Web", "Mobile Development", "React", "Next.js", "TypeScript"],
   authors: [{ name: "Nikita" }],
   creator: "Nikita",
   openGraph: {
-    title: "Nikita - Flutter Developer Portfolio",
+    title: "Nikita - Web Developer Portfolio",
     description:
-      "A passionate Flutter developer with 4 years of experience building high-performance, cross-platform mobile applications.",
+      "A passionate Web developer with 4 years of experience building high-performance, cross-platform mobile applications.",
     type: "website",
   },
 };

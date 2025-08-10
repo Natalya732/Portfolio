@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/shared/components/ui/button";
 import Image from "next/image";
 import { Github, Linkedin, Mail, Download, MailIcon } from "lucide-react";
+import { themeClasses } from "@/lib/theme";
 
 const SocialIcon = ({
   icon: Icon,
@@ -22,7 +23,7 @@ const SocialIcon = ({
     animate={{ opacity: 1, scale: 1 }}
     transition={{ duration: 0.5, delay }}
     whileHover={{ scale: 1.15, y: -5, rotate: 5 }}
-    className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl"
+    className={`w-10 h-10 rounded-full ${themeClasses.border.secondary} flex items-center justify-center ${themeClasses.text.primary} ${themeClasses.hover.bg.primary} ${themeClasses.hover.text.primary} transition-all duration-300 ${themeClasses.shadow.md} hover:shadow-xl`}
   >
     <Icon className="w-4 h-4" />
   </motion.a>
@@ -62,7 +63,7 @@ const Greeting = () => (
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, delay: 0.4 }}
-    className="text-3xl md:text-4xl font-bold text-white mb-4 font-montserrat tracking-wide"
+    className={`text-3xl md:text-4xl font-bold ${themeClasses.text.primary} mb-4 font-montserrat tracking-wide`}
   >
     Hi! I'm Nikita
   </motion.h1>
@@ -75,7 +76,7 @@ const RoleBadge = () => (
     transition={{ duration: 0.8, delay: 0.6 }}
     className="mb-6"
   >
-    <div className="inline-block bg-[#1e4eae] text-white text-xl font-bold px-8 py-3 rounded-lg border border-[#546a7b] shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 hover:scale-105">
+    <div className={`inline-block bg-blue-600 dark:bg-[#1e4eae] text-white text-xl font-bold px-8 py-3 rounded-lg border border-blue-500 dark:border-[#546a7b] ${themeClasses.shadow.lg} hover:shadow-orange-500/20 transition-all duration-300 hover:scale-105`}>
       Web Developer
     </div>
   </motion.div>
@@ -86,7 +87,7 @@ const Description = () => (
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, delay: 0.8 }}
-    className="text-[#9ea3b0] text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed font-medium"
+    className={`${themeClasses.text.secondary} text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed font-medium`}
   >
     based in Uttarakhand, India. I build interactive software applications &
     websites that run across platforms & devices.
@@ -132,7 +133,7 @@ const CallToActionButtons = () => (
   >
     <Button
       variant="outline"
-      className="border border-white text-white hover:bg-white hover:text-black transition-all duration-300 font-semibold text-base cursor-pointer rounded-lg hover:scale-105 shadow-lg hover:shadow-xl"
+      className={`${themeClasses.border.secondary} ${themeClasses.text.primary} ${themeClasses.hover.bg.primary} ${themeClasses.hover.text.primary} transition-all duration-300 font-semibold text-base cursor-pointer rounded-lg hover:scale-105 ${themeClasses.shadow.md} hover:shadow-xl`}
       onClick={() => {
         window.open("mailto:nikkupandey0602@gmail.com", "_blank");
       }}
@@ -143,7 +144,7 @@ const CallToActionButtons = () => (
 
     <Button
       variant="outline"
-      className="bg-white text-black cursor-pointer hover:bg-gray-100 transition-all duration-300 font-semibold text-base rounded-lg hover:scale-105 shadow-lg hover:shadow-xl"
+      className={`${themeClasses.bg.primary} ${themeClasses.text.primary} cursor-pointer ${themeClasses.hover.bg.primary} transition-all duration-300 font-semibold text-base rounded-lg hover:scale-105 ${themeClasses.shadow.md} hover:shadow-xl`}
       onClick={() => {
         window.open(
           "https://drive.google.com/file/d/1jDcRM2I9wDt8kQl_zukj5AQvIinz3mUc/view?usp=sharing",
@@ -162,7 +163,7 @@ const Separator = () => (
     initial={{ scaleX: 0 }}
     animate={{ scaleX: 1 }}
     transition={{ duration: 1, delay: 2 }}
-    className="w-full max-w-4xl mx-auto h-px bg-gradient-to-r from-transparent via-[#546a7b] to-transparent"
+    className="w-full max-w-4xl mx-auto h-px bg-gradient-to-r from-transparent via-gray-400 dark:via-[#546a7b] to-transparent"
   />
 );
 
@@ -173,7 +174,7 @@ export function Hero() {
       className="min-h-screen flex items-center justify-center px-4 pt-20 relative overflow-hidden"
     >
       {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0f295c] to-black opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50 to-gray-50 dark:from-black dark:via-[#0f295c] dark:to-black opacity-50" />
 
       <div className="text-center max-w-4xl mx-auto relative z-10">
         <ProfilePicture />

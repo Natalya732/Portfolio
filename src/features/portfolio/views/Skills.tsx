@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 import { SKILLS_DATA } from "@/shared/constants/skills";
+import { themeClasses } from "@/lib/theme";
 
 const SkillIcon = ({ 
   name, 
@@ -33,8 +34,8 @@ const SkillIcon = ({
       className="relative group"
     >
       {/* Skill Icon */}
-      <div className="w-16 h-16 rounded-full border border-white flex items-center justify-center bg-transparent hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer">
-        <IconComponent className="text-white text-2xl" />
+      <div className={`w-16 h-16 rounded-full ${themeClasses.border.secondary} hover:border-orange-500 flex items-center justify-center bg-transparent hover:bg-orange-500 hover:text-white transition-all duration-300 ${themeClasses.shadow.md} hover:shadow-xl cursor-pointer`}>
+        <IconComponent className={`${themeClasses.text.primary} text-2xl`} />
       </div>
       
       {/* Tooltip - Positioned above the icon */}
@@ -46,11 +47,11 @@ const SkillIcon = ({
           scale: isHovered ? 1 : 0.8 
         }}
         transition={{ duration: 0.2 }}
-        className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-white text-black px-3 py-2 rounded-lg shadow-lg font-medium text-sm whitespace-nowrap z-10"
+        className={`absolute -top-12 left-1/2 transform -translate-x-1/2 ${themeClasses.bg.card} ${themeClasses.text.primary} px-3 py-2 rounded-lg ${themeClasses.shadow.lg} font-medium text-sm whitespace-nowrap z-10`}
       >
         {name}
         {/* Tooltip arrow pointing down */}
-        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white" />
+        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white dark:border-t-gray-800" />
       </motion.div>
     </motion.div>
   );
@@ -82,7 +83,7 @@ export function Skills() {
   return (
     <section id="skills" className="py-20 px-4 relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0f295c]/20 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50/20 to-gray-50 dark:from-black dark:via-[#0f295c]/20 dark:to-black" />
       
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -98,8 +99,8 @@ export function Skills() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center mb-16"
         >
-          <h3 className="text-[#9ea3b0] text-lg font-medium mb-2">Skills</h3>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white font-montserrat">
+          <h3 className={`${themeClasses.text.secondary} text-lg font-medium mb-2`}>Skills</h3>
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${themeClasses.text.primary} font-montserrat`}>
             What I Know
           </h2>
         </motion.div>

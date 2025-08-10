@@ -25,7 +25,7 @@ const ExperienceItem = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: index * 0.2 + 0.2 }}
-        className="text-xl font-bold text-white mb-2"
+        className="text-xl font-bold text-gray-900 dark:text-white mb-2"
       >
         {experience.company}
       </motion.h3>
@@ -38,10 +38,10 @@ const ExperienceItem = ({
         transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
         className="mb-4"
       >
-        <h4 className="text-lg font-semibold text-white mb-1">
+        <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-1">
           {experience.title}
         </h4>
-        <p className="text-[#9ea3b0] text-sm">
+        <p className="text-gray-600 dark:text-[#9ea3b0] text-sm">
           {experience.period} · {experience.location}
         </p>
       </motion.div>
@@ -52,7 +52,7 @@ const ExperienceItem = ({
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
-        className="w-full h-px bg-[#546a7b] mb-4"
+        className="w-full h-px bg-gray-300 dark:bg-[#546a7b] mb-4"
       />
 
       {/* Achievements */}
@@ -75,8 +75,8 @@ const ExperienceItem = ({
             }}
             className="flex items-start gap-3"
           >
-            <div className="w-2 h-2 bg-[#546a7b] rounded-full mt-2 flex-shrink-0" />
-            <p className="text-[#9ea3b0] text-sm leading-relaxed">
+            <div className="w-2 h-2 bg-gray-400 dark:bg-[#546a7b] rounded-full mt-2 flex-shrink-0" />
+            <p className="text-gray-600 dark:text-[#9ea3b0] text-sm leading-relaxed">
               {achievement}
             </p>
           </motion.div>
@@ -98,7 +98,7 @@ export function Experience() {
   return (
     <section id="experience" className="py-20 px-4 relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0f295c]/20 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50/20 to-gray-50 dark:from-black dark:via-[#0f295c]/20 dark:to-black" />
 
       <motion.div
         ref={containerRef}
@@ -116,10 +116,10 @@ export function Experience() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center mb-16"
         >
-          <h3 className="text-[#9ea3b0] text-lg font-medium mb-2">
+          <h3 className="text-gray-600 dark:text-[#9ea3b0] text-lg font-medium mb-2">
             Experience
           </h3>
-          <h2 className="text-4xl md:text-5xl font-bold text-white font-montserrat">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white font-montserrat">
             Work History
           </h2>
         </motion.div>
@@ -127,7 +127,7 @@ export function Experience() {
         {/* Experience Timeline */}
         <div className="relative">
           {/* Main timeline line */}
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-[#546a7b] opacity-30" />
+          <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-300 dark:bg-[#546a7b] opacity-30" />
 
           {/* Gradient progress line */}
           <motion.div
