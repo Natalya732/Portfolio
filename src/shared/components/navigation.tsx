@@ -68,7 +68,7 @@ const ResumeButton = () => (
       className="bg-white dark:bg-white text-black hover:bg-gray-100 dark:hover:bg-gray-100 font-medium text-sm px-4 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
       onClick={() => {
         window.open(
-          "https://drive.google.com/file/d/1jDcRM2I9wDt8kQl_zukj5AQvIinz3mUc/view?usp=sharing",
+          "https://drive.google.com/file/d/1CtnosqfdVg6Gw70zhS4dVcLE2oMtTEDZ/view?usp=sharing",
           "_blank"
         );
       }}
